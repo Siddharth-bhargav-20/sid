@@ -1,0 +1,65 @@
+Q1) find the duplicate of array?
+Q2) remove duplicate of array ?
+Q3) find the vowels and consonent ?
+Q4) find the min. number of array and max no. of array ?
+
+ A1) int[] a1 = new int[5];
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter five integer: ");
+           for(int i=0 ; i<a1.length ; i++){
+               a1[i] = scan.nextInt();
+           }
+           int n=0;
+           for(int x=0 ; x<=4 ; x++){
+               for(int i=0 ; i<5 ; i++) {
+                   if (a1[x] == a1[i]) {
+                       n++;
+                   }
+               }
+           }
+
+           if(n<=0){
+               System.out.println("Not a Duplicate");
+           } else if (n>1) {
+               System.out.println("Duplicate");
+           }
+                
+
+      A2)   find the vowels and consonent
+         String s2 = new String("SIDDHARTH bhargav");
+
+         char c1 = 'S';
+
+        if(c1 == 'a' || c1 =='e' || c1=='i' || c1=='o' || c1 == 'u'){
+
+            System.out.println("Vowel");
+        } else   {
+               System.out.println("Consonant");
+        }    
+
+      A3)  Min no. of array and max. no. of array
+
+        int[] a1 = {12,33,56,678,44,9,0,11};
+        int [] m = {0};
+        int [] n = {0};
+
+        for(int i=0 ; i<a1.length ; i++){
+                if(a1[i] > m[0]){
+                    m[0] = a1[i];
+                } else if (a1[i]<=n[0]) {
+                      n[0] = a1[i];
+                }
+
+        }
+             System.out.println(n[0]);
+             System.out.println(m[0]);
+
+    }
+
+
+
+
+
+
+
+                                       
