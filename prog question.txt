@@ -56,6 +56,82 @@ Q4) find the min. number of array and max no. of array ?
 
     }
 
+Q4) Reverse a string ?
+
+
+A4)  StringBuilder s= new StringBuilder();
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter your name : ");
+        String str = scan.next();
+
+        char c;
+        System.out.println("Reverse String : ");
+        for(int x=str.length()-1 ; x>=0 ; x--){
+               c = str.charAt(x);
+              s.append(c);
+        }
+
+        System.out.println(s);
+
+
+Q5) Compare two integer ?
+ 
+ A6)  Scanner scan = new Scanner(System.in);
+        System.out.println("Enter first integer : ");
+        int n1 = scan.nextInt();
+
+        System.out.println("Enter second integer : ");
+        int n2 = scan.nextInt();
+
+        if(n1>n2){
+            System.out.println("n1 is greater than n2.");
+        } else if (n1<n2) {
+            System.out.println("n2 is greater than n1.");
+        }
+        else{ System.out.println("n1&n2 are equal."); }
+
+
+Q7) Sum of each digit ?
+ 
+A7)  Scanner scan = new Scanner(System.in);
+        System.out.println("Enter any integer : ");
+        int n = scan.nextInt();
+
+        int sum=0;
+        int a;                
+
+       while(n!=0){
+           a = n % 10;
+           sum = sum + a;
+           n = n / 10;
+       }
+        System.out.println("Sum of digit : " + sum);
+
+Q8)  Check whether a number is prime or not ?
+
+ A8)  Scanner scan = new Scanner(System.in);
+     System.out.println("Enter any integer : ");
+     int n = scan.nextInt();
+
+            if(n == 0 ){
+                System.out.println("Error!");
+
+            } else if (n<2) {
+                System.out.println("Error! rewrite integer.");
+            }
+            int a1=0;
+            int a=0;
+            for( int x=2 ; x<n ; x++) {
+                if(n % x == 0){
+                     a1 = x++;
+                }
+                else { a++; }
+            }
+            if(a>0 && a1==0){
+                System.out.println("IS a Prime number.");
+            } else if (a>0 && a1>0) {
+                System.out.println("Not a Prime.");
+            }
 
 
 
