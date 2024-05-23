@@ -1,0 +1,78 @@
+// main class
+package ab.sid;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.cfg.Configuration;
+
+
+public class App 
+{
+    public static void main( String[] args )
+    {
+        
+    	Configuration cfg=new Configuration();
+		cfg.configure("hibernate.cfg.xml");
+		SessionFactory factory = cfg.buildSessionFactory();
+		
+	    student s1 = new student();
+	    
+	    s1.setId(01);
+	    s1.setColor("RED");
+		s1.setCity("Indore");
+		
+		System.out.println(s1);
+	  
+       Session session = factory.openSession();
+       Transaction t1 = session.beginTransaction();
+       session.save(s1);
+       t1.commit();
+        factory.close();
+        session.close();
+    }
+}
+
+// Annotation class
+package ab.sid;
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class student {
+
+	@Id
+	private int id;
+	private String city;
+	private String color;
+	public student(int id, String city, String color) {
+		super();
+		this.id = id;
+		this.city = city;
+		this.color = color;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getCity() {
+		return city;
+	}
+	public void setCity(String city) {
+		this.city = city;
+	}
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public student() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+}
